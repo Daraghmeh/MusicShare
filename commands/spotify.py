@@ -31,7 +31,7 @@ def handleSongSearch(message, sender):
         party.queuesong(sender, "spotify", songname, artistname)
     else:
         sendtext(sender, config['DEFAULT']['ai_name'] + ": " + "Unable to find song: " + songname + "on Spotify.")
-        sendtext(sender, config['DEFAULT']['ai_name'] + ": " + "To send a song follow this format <Keyword><Source> <Song Title> by <Artist>" + "\n" + "For more commands please text" + "\"BCommands\"")
+        sendtext(sender, config['DEFAULT']['ai_name'] + ": " + "To send a song follow this format <Keyword><Source> <Song Title> by <Artist>" + "\n" + "For more commands please text" + "\"BHelp\"")
 
 
 def handleLyricSearch(message, sender):

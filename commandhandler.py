@@ -39,7 +39,7 @@ def handle(command, message, sender):
             #message = command + " " + message
             #module = importlib.import_module('song')
             #getattr(module, 'song')(message, sender)
-            sendtext(sender, "No such command")
+            sendtext(sender, config['DEFAULT']['ai_name'] + ": " +  "Sorry, no such command.  Please text" + "\"BHelp\"" + "for command list.")
     except Exception as e:
         print('Error handling command')
         print('error:')
