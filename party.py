@@ -53,7 +53,7 @@ def queuesong(sender, source, songname, artistname=None):
         queues[sender] = collections.deque()
         boos[sender] = False
     queues[sender].append((songname, artistname, source))
-    message = "Song queued: " + songname
+    message = config['DEFAULT']['ai_name'] + ": " + "Your Song has been queued, " + songname
     if artistname is not None:
         message = message + " by " + artistname
     sendtext(sender, message)
@@ -101,7 +101,7 @@ def playNextSong():
     time.sleep(5)
     ns = acquireNextSong()
     if ns:
-        sendtext(ns[0], "Your song '" + ns[1][0] + "' will be playing next!")
+        sendtext(ns[0], config['DEFAULT']['ai_name'] + ": " +"Your song '" + ns[1][0] + "' will be playing next!")
     #updateWebView() # WEB VIEW
  
 def acquireNextSong():

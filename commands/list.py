@@ -12,6 +12,4 @@ def list(message, sender):
                     msg += song[0]
         sendtext(sender, msg)
     else:
-        sendtext(sender, config['DEFAULT']['ai_name'] + ": " + "No song in queue :(")
-
-
+        sendtext(sender, config['DEFAULT']['ai_name'] + ": " + "No song in queue.")
