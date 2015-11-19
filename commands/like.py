@@ -21,13 +21,13 @@ def like(message, sender):
             if hash not in hottrack:
                 hottrack[hash] = [song[0], song[2], 0]
             hottrack[hash][2] += 1
-            sendtext(sender, config['DEFAULT']['ai_name'] + ": " + "You liked " + song[0] + " by " + song[1] + " song!")
             savesongs()
             if hottrack[hash][2] > party.getNumPlayers() / 2:
                 speakermanager.playSong((speakermanager.curSource, song[0], song[2]))
+            sendtext(sender, config['DEFAULT']['ai_name'] + ": " + "You liked " + song[0] + " by " + song[2] + " song!")
         else:
             sendtext(sender,
-                     config['DEFAULT']['ai_name'] + ": " + "You already liked " + song[0] + " by " + song[1] + " song!")
+                     config['DEFAULT']['ai_name'] + ": " + "You already liked " + song[0] + " by " + song[2] + " song!")
     except:
         sendtext(sender, config['DEFAULT']['ai_name'] + ": " + "No song is playing :(")
         traceback.print_exc()
